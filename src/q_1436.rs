@@ -1,14 +1,16 @@
 use std::collections::HashMap;
 
 pub fn solution() {
-    let vec1 = s1(vec![3, 2, 4], 6);
-    println!("{:?}", vec1);
-    let vec1 = s3(vec![3, 2, 4], 6);
-    println!("{:?}", vec1);
+    let vec = s_1(vec![3, 2, 4], 6);
+    println!("{:?}", vec);
+    let vec = s_2(vec![3, 2, 4], 6);
+    println!("{:?}", vec);
+    let vec = s_3(vec![3, 2, 4], 6);
+    println!("{:?}", vec);
     test_ownership();
 }
 
-fn s1(nums: Vec<i32>, target: i32) -> Vec<i32> {
+fn s_1(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let enumerate1 = nums.iter().enumerate();
     let enumerate2 = nums.iter().enumerate();
     for (idx, num) in enumerate1 {
@@ -22,7 +24,7 @@ fn s1(nums: Vec<i32>, target: i32) -> Vec<i32> {
     Vec::new()
 }
 
-pub fn s2(nums: Vec<i32>, target: i32) -> Vec<i32> {
+fn s_2(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut num_map: HashMap<i32, usize> = HashMap::with_capacity(nums.len());
     let enumerate = nums.iter().enumerate();
     for (i, num) in enumerate {
@@ -35,7 +37,7 @@ pub fn s2(nums: Vec<i32>, target: i32) -> Vec<i32> {
     Vec::new()
 }
 
-pub fn s3(nums: Vec<i32>, target: i32) -> Vec<i32> {
+fn s_3(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut result: Vec<i32> = Vec::with_capacity(2);
     let len = nums.len();
     let mut idx_o = 0;
