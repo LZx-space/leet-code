@@ -1,13 +1,21 @@
+use crate::solver::Solver;
 use std::collections::HashMap;
 
-pub fn solution() {
-    let vec = s_1(vec![3, 2, 4], 6);
-    println!("{:?}", vec);
-    let vec = s_2(vec![3, 2, 4], 6);
-    println!("{:?}", vec);
-    let vec = s_3(vec![3, 2, 4], 6);
-    println!("{:?}", vec);
-    test_ownership();
+pub struct Solution;
+
+impl Solver for Solution {
+    fn solve(&self) {
+        let vec = s_1(vec![3, 2, 4], 6);
+        println!("{:?}", vec);
+        let vec = s_2(vec![3, 2, 4], 6);
+        println!("{:?}", vec);
+        let vec = s_3(vec![3, 2, 4], 6);
+        println!("{:?}", vec);
+    }
+
+    fn related_lang_concepts(&self) {
+        test_ownership()
+    }
 }
 
 fn s_1(nums: Vec<i32>, target: i32) -> Vec<i32> {
@@ -58,12 +66,13 @@ fn s_3(nums: Vec<i32>, target: i32) -> Vec<i32> {
     }
     result
 }
+
 // -----------------------
 
 fn test_ownership() {
     let t1 = T1 {};
     t1.test();
-    // 下一行展示了self参数导致所有权进入新作用域后未返回后导致的结果，s1的enumerate2.into_iter正是如此
+    println!("取消下一行注释以展示了self参数导致所有权进入新作用域后未返回后导致的结果，s1的enumerate2.into_iter正是如此")
     // t1.test();
 }
 
