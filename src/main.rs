@@ -11,8 +11,10 @@ fn main() {
         Box::new(s_1436::Solution {})
     ];
     solutions.iter().for_each(|solver| {
-        println!(">>> solve-------------------------");
+        println!("***********************************");
+        println!(">>> solve -------------------------");
         solver.solve();
+        println!(">>> related lang concepts ---------");
         solver.related_lang_concepts();
     });
 }
