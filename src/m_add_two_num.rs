@@ -4,7 +4,7 @@ pub struct Solution;
 
 impl Solver for Solution {
     fn solve(&self) {
-        todo!()
+        
     }
 
 }
