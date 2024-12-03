@@ -5,7 +5,7 @@ pub struct Solution;
 impl Solver for Solution {
     fn solve(&self) {
         let i = s_1(&mut vec![1, 1, 1, 1, 2, 4]);
-        println!("{}", i);
+        println!("--{}", i);
     }
 
 }
